@@ -88,11 +88,10 @@ public class BasicSorting {
 	public static int partition(int[] arr, int low, int high){
 		int par = arr[low];
 		while(low < high){
-			while(low < high && arr[high] >= par) --high;
-			arr[low] = arr[high];
-			while(low < high && arr[low]  <= par) ++low;
-			arr[high] = arr[low];
-			
+			while(low < high && arr[high] >= par){ --high; }			
+			exchange(arr,low,high);
+			while(low < high && arr[low]  <= par){ ++low;  }
+			exchange(arr,low,high);
 		}
 		arr[low] = par;
 		return low;
