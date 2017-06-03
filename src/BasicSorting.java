@@ -1,9 +1,10 @@
 
 public class BasicSorting {
 	/**
-	 * 冒泡排序	
-	 * 郑子旋		
-	 * 2017年6月2日
+	 * 名称：冒泡排序	
+	 * 姓名：郑子旋		
+	 * 时间：2017年6月2日
+	 * 思路：在数组中比较并交换所有的元素
 	 */
 	public static void bubbleSort(int[] arr){
 		int len = arr.length;
@@ -17,9 +18,11 @@ public class BasicSorting {
 	}
 	
 	/**
-	 * 选择排序	
-	 * 郑子旋	     
-	 * 2017年6月2日
+	 * 名称：选择排序	
+	 * 姓名：郑子旋	     
+	 * 时间：2017年6月2日
+	 * 思路：通过每次遍历，寻找数组中最小元素，依次按顺序插入
+	 * 		得到有序数组
 	 */	
 	public static void selectSort(int[] testArray){
 		int len = testArray.length;
@@ -35,9 +38,13 @@ public class BasicSorting {
 	}
 	
 	/**
-	 * 插入排序
-	 * 郑子旋
-	 * 2017年6月2日
+	 * 名称：插入排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月2日
+	 * 思路：原始思路是将一个数插入一个已排好序的数组中，
+	 * 		在编程实现时思路是以第一个元素作为一个数组，
+	 * 		则此数组为有序数组，将后面的元素一个一个插
+	 * 		入，使得最终数组为有序数组
 	 */
 	public static void insertSort(int[] arr){
 		int len = arr.length;
@@ -51,9 +58,12 @@ public class BasicSorting {
 		}
 	}
 	/**
-	 * 快速排序
-	 * 郑子旋
-	 * 2017年6月3日
+	 * 名称：快速排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月3日
+	 * 思路：分治思想，将整个数组通过分治的方法不断的划分成小数组
+	 * 		在每个数组中继续进行分治，划分成更小的，在各个小数组
+	 * 		中进行排序
 	 */
 	public static void quickSort(int[] arr){
 		qsort(arr,0,arr.length -1);
@@ -69,7 +79,11 @@ public class BasicSorting {
 		}
 	}
 	/**
-	 * 
+	 * 名称：快速排序中的划分板块
+	 * 姓名：郑子旋
+	 * 时间：2017年6月3日
+	 * 思路：在每个划分模块中，先将首元素确定为基准，将数组中比基准大的
+	 * 		部分扔到基准右边，小的到左边。极限状况：划分的子数组只有2个元素
 	 */
 	public static int partition(int[] arr, int low, int high){
 		int par = arr[low];
@@ -85,9 +99,9 @@ public class BasicSorting {
 	}
 	
 	/**
-	 * 交换两个数位置
-	 * 郑子旋
-	 * 2017年6月2日
+	 * 名称：交换两个数位置
+	 * 姓名：郑子旋
+	 * 时间：2017年6月2日
 	 */
 	public static void exchange(int[] testArray,int a, int b){
 		int mid;
