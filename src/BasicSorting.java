@@ -69,7 +69,10 @@ public class BasicSorting {
 		qsort(arr,0,arr.length -1);
 	}
 	/**
-	 * 
+	 * 名称：快速排序递归板块
+	 * 姓名：郑子旋
+	 * 时间：2017年6月3日
+	 * 思路：同上，这是具体进行划分的板块
 	 */
 	public static void qsort(int[] arr, int low, int high){
 		if(low < high){
