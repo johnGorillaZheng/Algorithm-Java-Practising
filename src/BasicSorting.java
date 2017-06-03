@@ -1,11 +1,11 @@
 
 public class BasicSorting {
 	/**
-	 * 冒泡排序	BubbleSort
-	 * 郑子旋		Zixuan Zheng
+	 * 冒泡排序	
+	 * 郑子旋		
 	 * 2017年6月2日
 	 */
-	public static void bubbleSort(double[] arr){
+	public static void bubbleSort(int[] arr){
 		int len = arr.length;
 		for(int i = 0; i < len - 1; i ++){
 			for(int j = 0; j < len - 1 - i; j++){
@@ -17,20 +17,20 @@ public class BasicSorting {
 	}
 	
 	/**
-	 * 选择排序	selectSort
-	 * 郑子旋	    Zixuan Zheng 
+	 * 选择排序	
+	 * 郑子旋	     
 	 * 2017年6月2日
 	 */	
-	public static void selectSort(double[] arr){
-		int len = arr.length;
+	public static void selectSort(int[] testArray){
+		int len = testArray.length;
 		for(int i = 0; i < len; i++){
 			int min = i;
 			for(int j = i + 1; j < len; j++){
-				if(arr[j] < arr[min]){
+				if(testArray[j] < testArray[min]){
 					min = j;
 				}
 			}
-			exchange(arr,i,min);
+			exchange(testArray,i,min);
 		}	
 	}
 	
@@ -39,7 +39,7 @@ public class BasicSorting {
 	 * 郑子旋
 	 * 2017年6月2日
 	 */
-	public static void insertSort(double[] arr){
+	public static void insertSort(int[] arr){
 		int len = arr.length;
 		for(int i = 0; i < len - 1; i++){
 			for(int j = i+1; j >0; j--){
@@ -50,17 +50,50 @@ public class BasicSorting {
 			}
 		}
 	}
+	/**
+	 * 快速排序
+	 * 郑子旋
+	 * 2017年6月3日
+	 */
+	public static void quickSort(int[] arr){
+		qsort(arr,0,arr.length -1);
+	}
+	/**
+	 * 
+	 */
+	public static void qsort(int[] arr, int low, int high){
+		if(low < high){
+			int par = partition(arr,low,high);
+			qsort(arr,low,par - 1);
+			qsort(arr,par+1,high);
+		}
+	}
+	/**
+	 * 
+	 */
+	public static int partition(int[] arr, int low, int high){
+		int par = arr[low];
+		while(low < high){
+			while(low < high && arr[high] >= par) --high;
+			arr[low] = arr[high];
+			while(low < high && arr[low]  <= par) ++low;
+			arr[high] = arr[low];
+			
+		}
+		arr[low] = par;
+		return low;
+	}
 	
 	/**
 	 * 交换两个数位置
 	 * 郑子旋
 	 * 2017年6月2日
 	 */
-	public static void exchange(double[] arr,int a, int b){
-		double mid;
-		mid = arr[a];
-		arr[a] = arr[b];
-		arr[b] = mid;
+	public static void exchange(int[] testArray,int a, int b){
+		int mid;
+		mid = testArray[a];
+		testArray[a] = testArray[b];
+		testArray[b] = mid;
 	}
 
 }
