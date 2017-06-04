@@ -101,6 +101,43 @@ public class BasicSorting {
 	}
 	
 	/**
+	 * 名称：三取样切分优化快速排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月4日
+	 */
+	public static void quickSort_3Way(int[] arr){
+		qsort_3Way(arr, 0, arr.length - 1);
+	}
+	/**
+	 * 名称：三取样切分优化快速排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月4日
+	 * 思路：在划分时将数组切分成三块，小于基准，等于基准以及大于基准，
+	 *      在代码实现时，思路是在每个子序列中将所有小于基准的扔到左
+	 *      边，大的扔到右边，中间是相等的部分
+	 */
+	public static void qsort_3Way(int[] arr, int low, int high){
+		if(high <= low)
+			return;
+		
+		int lt = low;			//lt指针以左代表小于切分元素
+		int i = low + 1;		//i 指针代表lt与gt指针之间，等于切分元素
+		int gt = high;			//gt指针以右代表大于切分元素
+		int par = arr[low]; 	//指定数组首元素为基准
+		while(i <= gt){
+			if(arr[i] < par){
+				exchange(arr,i++,lt++);
+			}else if(arr[i] > par){
+				exchange(arr,i,gt--);
+			}else{
+				i ++;
+			}
+		}
+		//qsort_3Way(arr,low,lt);
+		qsort_3Way(arr,gt + 1,high);
+	}
+	
+	/**
 	 * 名称：交换两个数位置
 	 * 姓名：郑子旋
 	 * 时间：2017年6月2日
@@ -111,5 +148,4 @@ public class BasicSorting {
 		testArray[a] = testArray[b];
 		testArray[b] = mid;
 	}
-
 }
