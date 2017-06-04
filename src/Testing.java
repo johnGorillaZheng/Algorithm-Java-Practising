@@ -10,11 +10,13 @@ public class Testing {
 		for(int i = 0; i < testArray.length; i ++){
 			testArray[i] = (int) (Math.random()*10000);
 			System.out.print(testArray[i] + " ");
+			if(i == testArray.length - 1)
+				System.out.print("\n");
 		}
 		
 //		BasicSorting.quickSort(testArray);
-		BasicSorting.quickSort_3Way(testArray);
-		
+//		BasicSorting.quickSort_3Way(testArray);
+		BasicSorting.shellSort(testArray);		
 		for(int i = 0; i < testArray.length; i ++){
 			System.out.print(testArray[i] + " ");
 		}

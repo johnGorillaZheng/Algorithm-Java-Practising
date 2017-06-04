@@ -57,6 +57,29 @@ public class BasicSorting {
 			}
 		}
 	}
+	
+	/**
+	 * 名称：希尔排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月4日
+	 * 思路：
+	 */
+	public static void shellSort(int[] arr){
+		int len = arr.length;
+		int h = 1;
+		while(h < len/3){ h = h*3 + 1; }
+		while(h >= 1){
+			for(int i = h; i < len; i++){
+				for(int j = i; 
+						(j >= h) && (arr[j] < arr[j-h]); 
+						j -= h){
+					exchange(arr,j,j-h);
+				}
+			}
+			h = h/3;
+		}
+	}
+	
 	/**
 	 * 名称：快速排序
 	 * 姓名：郑子旋
@@ -126,15 +149,25 @@ public class BasicSorting {
 		int par = arr[low]; 	//指定数组首元素为基准
 		while(i <= gt){
 			if(arr[i] < par){
-				exchange(arr,i++,lt++);
+				exchange(arr,lt++,i++);
 			}else if(arr[i] > par){
 				exchange(arr,i,gt--);
 			}else{
 				i ++;
 			}
 		}
-		//qsort_3Way(arr,low,lt);
+		qsort_3Way(arr,low,lt - 1);
 		qsort_3Way(arr,gt + 1,high);
+	}
+	
+	/**
+	 * 名称：归并排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月4日
+	 * 思路：
+	 */
+	public static void mergeSort(int[] arr){
+		
 	}
 	
 	/**
