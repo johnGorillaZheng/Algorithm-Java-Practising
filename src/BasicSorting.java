@@ -190,7 +190,8 @@ public class BasicSorting {
 	 * 名称：归并排序中的排序
 	 * 姓名：郑子旋
 	 * 时间：2017年6月5日
-	 * 思路：
+	 * 思路：原理可以看作是将两个排好序的数组进行合并，当数组分裂的足够小
+	 *      即单个元素时，然后将其按照大小排进原数组
 	 */
 	public static void merge(int[] arr, int[] temp, int low, int middle, int high){
 		
