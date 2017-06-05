@@ -167,8 +167,49 @@ public class BasicSorting {
 	 * 思路：
 	 */
 	public static void mergeSort(int[] arr){
-		
+		int len = arr.length;
+		int[] temp = new int[len];
+		mSort(arr,temp,0,len - 1);
 	}
+	/**
+	 * 
+	 */
+	public static void mSort(int[] arr, int[] temp, int low, int high){
+		if(low < high){
+			int middle = (high + low)/2;
+			mSort(arr,temp,low,middle);
+			mSort(arr,temp,middle+1,high);
+			merge(arr,temp,low,middle,high);
+		}else{
+			return;
+		}
+	}
+	/**
+	 * 
+	 */
+	public static void merge(int[] arr, int[] temp, int low, int middle, int high){
+		
+		int pointerLow = low;
+		int pointerMiddle = middle + 1;
+		int fillTemp = 0;
+		while(pointerLow <= middle && pointerMiddle <= high){
+			if(arr[pointerLow] < arr[pointerMiddle]){
+				temp[fillTemp++] = arr[pointerLow++];
+			}else{
+				temp[fillTemp++] = arr[pointerMiddle++];
+			}
+		}
+		while(pointerLow <= middle){
+			temp[fillTemp++] = arr[pointerLow++];
+		}
+		while(pointerMiddle <= high){
+			temp[fillTemp++] = arr[pointerMiddle++];
+		}
+		for(int i = 0; i < fillTemp; i++){
+			arr[low + i] = temp[i];
+		}
+	}
+	
 	
 	/**
 	 * 名称：交换两个数位置

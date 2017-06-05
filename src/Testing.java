@@ -16,7 +16,8 @@ public class Testing {
 		
 //		BasicSorting.quickSort(testArray);
 //		BasicSorting.quickSort_3Way(testArray);
-		BasicSorting.shellSort(testArray);		
+//		BasicSorting.shellSort(testArray);	
+		BasicSorting.mergeSort(testArray);
 		for(int i = 0; i < testArray.length; i ++){
 			System.out.print(testArray[i] + " ");
 		}
