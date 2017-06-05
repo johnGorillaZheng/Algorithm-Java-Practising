@@ -164,7 +164,6 @@ public class BasicSorting {
 	 * 名称：归并排序
 	 * 姓名：郑子旋
 	 * 时间：2017年6月4日
-	 * 思路：
 	 */
 	public static void mergeSort(int[] arr){
 		int len = arr.length;
@@ -172,7 +171,10 @@ public class BasicSorting {
 		mSort(arr,temp,0,len - 1);
 	}
 	/**
-	 * 
+	 * 名称：归并排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月5日
+	 * 思路：利用分治思想，将数组分割成小数组然后，在小数组中进行排序
 	 */
 	public static void mSort(int[] arr, int[] temp, int low, int high){
 		if(low < high){
@@ -185,7 +187,10 @@ public class BasicSorting {
 		}
 	}
 	/**
-	 * 
+	 * 名称：归并排序中的排序
+	 * 姓名：郑子旋
+	 * 时间：2017年6月5日
+	 * 思路：
 	 */
 	public static void merge(int[] arr, int[] temp, int low, int middle, int high){
 		
