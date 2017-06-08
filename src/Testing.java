@@ -24,7 +24,7 @@ public class Testing {
 		}
 		System.out.print("\n");
 //		int[][] result = BasicMatrix.matrixAdd(first,second);
-		int[][] result = BasicMatrix.matrixSubtraction(first,second);
+//		int[][] result = BasicMatrix.matrixSubtraction(first,second);
 		for(int i = 0; i < first.length; i++){
 			for(int j = 0; j < first[0].length; j++){
 				System.out.print(result[i][j] + " ");
