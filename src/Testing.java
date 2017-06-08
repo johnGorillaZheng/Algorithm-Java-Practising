@@ -11,27 +11,41 @@ public class Testing {
 	}
 	
 	public static void testMatrix(){
-		int[][] first = new int[5][5];
+		int[][] first = new int[2][2];
 		int[][] second = new int[5][5];
+		
 		for(int i = 0; i < first.length; i++){
 			for(int j = 0; j < first[0].length; j++){
 				first[i][j] = (int) (Math.random()*100);
-				second[i][j] = (int) (Math.random()*100);
-				System.out.print(first[i][j] + "+");
-				System.out.print(second[i][j] + " ");
+				System.out.print(first[i][j] + " ");
 			}
 			System.out.print("\n");
+		}
+		
+		System.out.print("\n");
+		
+		for(int i1 = 0; i1 < second.length; i1++){
+			for(int j = 0; j < second[0].length; j++){
+				second[i1][j] = (int) (Math.random()*100);
+				System.out.print(second[i1][j] + " ");
+				}
+				System.out.print("\n");
 		}
 		System.out.print("\n");
 //		int[][] result = BasicMatrix.matrixAdd(first,second);
 //		int[][] result = BasicMatrix.matrixSubtraction(first,second);
-		for(int i = 0; i < first.length; i++){
-			for(int j = 0; j < first[0].length; j++){
-				System.out.print(result[i][j] + " ");
-			}
-			System.out.print("\n");
-		}
+//		int[][] result = BasicMatrix.matrixMultiple(first, second);
+		int result = BasicMatrix.getDeterminant(first);
+//		for(int i1 = 0; i1 < result.length; i1++){
+//			for(int j = 0; j < result[0].length; j++){
+//				System.out.print(result[i1][j] + " ");
+//			}
+//			System.out.print("\n");
+		
+//		}
+		System.out.println(result);
 	}
+
 	
 	
 	
