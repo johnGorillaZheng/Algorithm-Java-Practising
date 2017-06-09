@@ -3,8 +3,8 @@ public class Testing {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		testSorting();
-		testMatrix();
+		testSorting();
+//		testMatrix();
 		
 		
 	
@@ -60,11 +60,11 @@ public class Testing {
 //			if(i == testArray.length - 1)
 //				System.out.print("\n");
 		}		
-//		BasicSorting.quickSort(testArray);
+		BasicSorting.quickSort(testArray);
 //		BasicSorting.quickSort_3Way(testArray);
 //		BasicSorting.shellSort(testArray);	
 //		BasicSorting.mergeSort(testArray);
-		BasicSorting.bubbleSort(testArray);
+//		BasicSorting.bubbleSort(testArray);
 		for(int i = 0; i < testArray.length; i ++){
 			System.out.print(testArray[i] + " ");
 		}
