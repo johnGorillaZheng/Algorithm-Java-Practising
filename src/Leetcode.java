@@ -44,10 +44,29 @@ public class Leetcode {
         }
         return result;
     }
+    public static int arrangeCoins(int n) {
+        double deal = (double)n;
+        double result = 0;
+        double process = 0;
+        for(float i = 0;; i++) {
+        	process = i/2;
+			process = process * (i+1);
+            if( process == deal ) {
+            	result = i;
+            	break;
+            }else if( deal - process < i+1){
+                result = i;
+                break;
+            }
+        }        
+
+        return (int)result;
+    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int result = findComplement();
-		System.out.println(result);
+		//int result = findComplement(8);
+		//System.out.println((int)(Math.pow(3,19)));
+		System.out.println(arrangeCoins(2146467959));
 	}
 
 }
