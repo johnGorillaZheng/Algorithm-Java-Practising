@@ -59,14 +59,163 @@ public class Leetcode {
                 break;
             }
         }        
-
         return (int)result;
+    }
+    public static int findMaxConsecutiveOnes(int[] nums) {
+    	int result = 0;
+    	int buffer = 0;
+    	for(int i = 0; i < nums.length; i++) {
+    		if(nums[i] == 1) {
+    			buffer ++;
+    		}
+    		if(nums[i] == 0) {
+    			if(buffer > result) {
+    				result = buffer;
+    			}
+    			buffer = 0;
+    		}
+    	}
+    	if(buffer > result) {
+    		result = buffer;
+    	}
+		return result; 
+    }
+    
+    public static int[] nextGreaterElement(int[] findNums, int[] nums) {
+    	int[] result = new int[findNums.length];
+    	int i,j;
+    	for(i = 0; i < result.length; i++) {
+     		for(j = i+1; j < nums.length; j++) {
+     			if(nums[j] > findNums[i]) {
+     				result[i] = nums[j];
+     				break;
+     			}
+     		}
+     		if(j == nums.length) {
+     			result[i] = -1;
+     		}
+     	}
+		return result; 
+    }
+    
+    public static int islandPerimeter(int[][] grid) {
+    	int result = 0;
+    	int row = grid.length;
+    	int column = grid[0].length;
+    	for(int i = 0; i < row; i++) {
+    		for(int j = 0; j < column; j++) {
+    			if(grid[i][j] == 1) {
+    				result += 4;    			
+    				if(i != 0 && j != 0 &&
+    				   i != row-1 && j != row-1) {
+	    				if(grid[i-1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i+1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j-1] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j+1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				if(i == 0 && j == 0) {
+	    				if(grid[i+1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j+1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				if(i == 0 && j ==column-1) {
+	    				if(grid[i+1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j-1] == 1) {
+	    					result --;
+	    				}
+	    				
+    				}
+    				if(i == row-1 && j == 0) {
+	    				if(grid[i-1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j+1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				if(i == row-1 && j == column-1) {
+	    				if(grid[i-1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j-1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				
+    				if(i == 0 && j > 0 && j < column-1) {
+	    				if(grid[i][j-1] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i+1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j+1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				if(i == row-1 && j > 0 && j < column-1) {
+	    				if(grid[i][j-1] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i-1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j+1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				if(j == 0 && i > 0 && i < row-1) {
+	    				if(grid[i-1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i+1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j+1] == 1) {
+	    					result --;
+	    				}
+    				}
+    				if(j == column-1 && i > 0 && i < row-1) {
+	    				if(grid[i-1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i+1][j] == 1) {
+	    					result --;
+	    				}
+	    				if(grid[i][j-1] == 1) {
+	    					result --;
+	    				}
+    				}
+    			}			
+    		}
+    	}
+    	
+    	
+    	return result;
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//int result = findComplement(8);
 		//System.out.println((int)(Math.pow(3,19)));
-		System.out.println(arrangeCoins(2146467959));
+//		System.out.println(arrangeCoins(2146467959));
+		int a[] = {2,4};
+		int b[] = {1,2,3,4};
+		int c[] = nextGreaterElement(a,b);
+		for(int i = 0; i < c.length; i++)
+			System.out.println(c[i]);
 	}
 
 }
