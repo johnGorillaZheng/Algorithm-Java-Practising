@@ -44,6 +44,7 @@ public class Leetcode {
         }
         return result;
     }
+    
     public static int arrangeCoins(int n) {
         double deal = (double)n;
         double result = 0;
@@ -61,6 +62,7 @@ public class Leetcode {
         }        
         return (int)result;
     }
+    
     public static int findMaxConsecutiveOnes(int[] nums) {
     	int result = 0;
     	int buffer = 0;
@@ -202,10 +204,48 @@ public class Leetcode {
     			}			
     		}
     	}
-    	
-    	
+		return result;
+    }
+
+    public static boolean judgeCircle(String moves) {
+		boolean result = false;
+		int length = moves.length();
+		int total_vertical = 0;
+		int total_horizontal = 0;
+		char[] move_array = moves.toCharArray();
+		
+		for (int i = 0; i < length; i++) {
+			if (move_array [i] == 'U') {
+				total_vertical ++;
+			}
+			if (move_array [i] == 'D') {
+				total_vertical --;
+			}
+			if (move_array [i] == 'L') {
+				total_horizontal ++;
+			}
+			if (move_array [i] == 'R') {
+				total_horizontal --;
+			}
+		}
+		if(total_vertical == 0 && total_horizontal == 0) {
+			result = true;
+		}
     	return result;
     }
+
+    public static int hammingDistance(int x, int y) {
+    	int distance = 0;
+    	while (x != 0 || y != 0) {
+    		if (x % 2 != y % 2) {
+    			distance ++;
+    		}
+    		x /= 2;
+    		y /= 2;
+    	}
+    	return distance;
+    }
+    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//int result = findComplement(8);
@@ -214,8 +254,10 @@ public class Leetcode {
 		int a[] = {2,4};
 		int b[] = {1,2,3,4};
 		int c[] = nextGreaterElement(a,b);
-		for(int i = 0; i < c.length; i++)
-			System.out.println(c[i]);
+		int d[][] = {{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+		System.out.print(islandPerimeter(d));
+//		for(int i = 0; i < c.length; i++)
+//			System.out.println(c[i]);
 	}
 
 }
