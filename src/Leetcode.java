@@ -245,8 +245,20 @@ public class Leetcode {
     	}
     	return distance;
     }
+
+    public static String reverseString(String s) {
+        char[] test = s.toCharArray();
+        String result = "";
+        for (int  i = test.length - 1; i >= 0; i --) {
+        	result += test[i];
+        }
+        return result;
+    }
+
     
-	public static void main(String[] args) {
+    
+    
+    public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//int result = findComplement(8);
 		//System.out.println((int)(Math.pow(3,19)));
