@@ -51,7 +51,7 @@ public class Testing {
 	
 	
 	public static void testSorting(){
-		int[] testArray = new int[10000];
+		int[] testArray = new int[500000];
 //		BasicSorting.exchange(a, b);
 //		System.out.println(a);
 		for(int i = 0; i < testArray.length; i ++){
@@ -60,14 +60,19 @@ public class Testing {
 //			if(i == testArray.length - 1)
 //				System.out.print("\n");
 		}		
-		BasicSorting.quickSort(testArray);
+//		BasicSorting.quickSort(testArray);
 //		BasicSorting.quickSort_3Way(testArray);
 //		BasicSorting.shellSort(testArray);	
-//		BasicSorting.mergeSort(testArray);
+		long startTime = System.currentTimeMillis();
+		BasicSorting.mergeSort(testArray);
+		long endTime = System.currentTimeMillis(); //获取结束时间 
 //		BasicSorting.bubbleSort(testArray);
+		
 		for(int i = 0; i < testArray.length; i ++){
 			System.out.print(testArray[i] + " ");
 		}
+		 
+		System.out.println("time taken:" + (endTime - startTime) + "ms");
 	}
 
 }
