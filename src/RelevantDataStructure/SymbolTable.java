@@ -38,7 +38,11 @@ public class SymbolTable <Key, Value> {
 	}
 	
 	/**
-	 * 
+	 * 名称：插入一个新节点
+	 * 方法：1.如果键为空，则抛出异常
+	 *      2.如果值为空且键不为空，则删除对应键上的值
+	 *      3.其余情况，找到表中对应该键的节点，将值赋予此节点
+	 *      4.如果表为空表，将该元素赋予表的头元素
 	 * @param key
 	 * @param val
 	 */
@@ -62,7 +66,10 @@ public class SymbolTable <Key, Value> {
 	}
 	
 	/**
-	 * 
+	 * 名称：获取键对应的值
+	 * 方法：1.如果键为空，则抛出异常
+	 *      2.遍历找到表中对应键的节点，返回值
+	 *      3.如果没有，返回null
 	 * @param key
 	 * @return
 	 */
@@ -77,7 +84,9 @@ public class SymbolTable <Key, Value> {
 	}
 	
 	/**
-	 * 
+	 * 名称：删除节点
+	 * 方法：1.如果键为空，则抛出异常
+	 *      2.遍历找到对应键的节点，将此节点的前一节点的nextNode指针指向此节点的下一节点
 	 * @param key
 	 */
 	public void delete(Key key) {
